@@ -5,6 +5,7 @@ BunnyDefender.StartMenu=function(game){
     this.startBG;
     this.startBG2;
     this.startPrompt;
+    this.ding;
 };
 BunnyDefender.StartMenu.prototype = {
 
@@ -14,10 +15,12 @@ BunnyDefender.StartMenu.prototype = {
         startBG.inputEnabled = true; //now we can accept clicks/touches
         startBG.events.onInputDown.addOnce(this.startGame, this); //will happen when input happens
 
-        startPrompt = this.add.bitmapText(this.world.centerX-155, this.world.centerY+180, 'eightbitwonder', 'Touch to Start!', 24);
+        startPrompt = this.add.bitmapText(this.world.centerX-240, this.world.centerY+180, 'eightbitwonder', 'Touch Center to Start!', 24);
+        this.ding = this.add.audio('select_audio');
     },
 
-    startGame: function (pointer) {
+    startGame: function (pointer) { //takes in a click...
+        this.ding.play();
         this.state.start('Game'); //now we finally build the game....
     }
 };

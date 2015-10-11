@@ -2,11 +2,15 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" sizes="196x196" href="bunny.png">
     <title>Bunny Defender</title>
     <script src="libs/phaser.js"></script> <!--including phaser library-->
     <script src="js/Boot.js"></script> <!--//abstracted js file we use to boot the game-->
     <script src="js/Preloader.js"></script> <!--//the actual preloader-->
     <script src="js/StartMenu.js"></script>
+    <script src="js/Game.js"></script>
     <style>
         body {
             padding: 0;
@@ -23,6 +27,7 @@
         game.state.add('Boot', BunnyDefender.Boot);//Simply creating a boot state
         game.state.add('Preloader',BunnyDefender.Preloader);//simply creating a preloader state
         game.state.add('StartMenu',BunnyDefender.StartMenu);
+        game.state.add('Game',BunnyDefender.Game);
         game.state.start('Boot');//Boot state invokes preloader state, so we simply start the boot state
     }
 </script>
