@@ -12,9 +12,10 @@ BunnyDefender.Preloader.prototype = {
         this.preloadBar=this.add.sprite(this.world.centerX,this.world.centerY,'preloaderBar');
         this.preloadBar.anchor.setTo(0.5,0.5); //transform point is center of object
         this.load.setPreloadSprite(this.preloadBar);
-        this.titleText=this.add.image(this.world.centerX,this.world.centerY-220,'titleimage');
+        this.titleText=this.add.image(this.world.centerX-370,this.world.centerY-200,'globeimage'); //globe
+        this.titleText=this.add.image(this.world.centerX,this.world.centerY-300,'titleimage');this.titleText.scale.setTo(0.7,0.7); //whereiamfrom
         this.titleText.anchor.setTo(0.5,0.5);
-        this.load.image('titlescreen','assets/titlescreen.png');
+        this.load.image('titlescreen','assets/globalimage.png');
         this.load.bitmapFont('eightbitwonder','assets/fonts/eightbitwonder.png','assets/fonts/eightbitwonder.fnt');
         this.load.image('hill','assets/hill.png');
         this.load.image('sky','assets/sky.png');
